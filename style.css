@@ -1,0 +1,30 @@
+body{
+    display: flex;
+}
+
+.buts{
+    min-height: 100%;
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    width: 80px;
+    height: 80px;
+    border-radius: 5px;
+    background-image: url("./assets/svg/play.png");
+    background-size: contain;
+  }
+  
+  .pause {  
+    background-image: url("./assets/svg/pause.png");
+  }
+
+  .prev{
+    background-image: url("./assets/svg/backward.png");
+  }
+  .next{
+    background-image: url("./assets/svg/forward.png");
+  }
