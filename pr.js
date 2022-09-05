@@ -11,6 +11,8 @@ const nextBtn = document.querySelector('.next');
 const progress = document.querySelector('.progress');
 const progressContainer = document.querySelector('.progress_container');
 
+
+
 let isPlay = false;
 
 function playNext(){
@@ -44,6 +46,7 @@ function playPrev(){
   playAudio();
   document.querySelector('.song').innerHTML = songs[playNum];
   document.querySelector('.musician').innerHTML = musicians[playNum];
+  
 }
 
 
@@ -52,6 +55,9 @@ function playAudio() {
   playBtn.classList.add('pause');
   isPlay = true;
   tracks[playNum].play();
+  let mins = ('0' + Math.round((tracks[playNum].duration / 60))).slice(-2);
+  let secs = ('0' + Math.round((tracks[playNum].duration % 60))).slice(-2);
+  document.querySelector('.duration').innerHTML = mins + ":" + secs;
   updateProgress();
   
 
@@ -74,6 +80,9 @@ function updateProgress(){
   const currentTime = tracks[playNum].currentTime;
   const progressPercent = (currentTime / duration) * 100;
   progress.style.width = `${progressPercent}%`
+  let mins = ('0' + Math.round((currentTime / 60))).slice(-2);
+  let secs = ('0' + Math.round((currentTime % 60))).slice(-2);
+  document.querySelector('.current').innerHTML = mins + ":" + secs;
   }
 
 function setProgress(e){
