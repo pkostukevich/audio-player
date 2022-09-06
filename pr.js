@@ -59,8 +59,6 @@ function playAudio() {
   let secs = ('0' + Math.round((tracks[playNum].duration % 60))).slice(-2);
   document.querySelector('.duration').innerHTML = mins + ":" + secs;
   updateProgress();
-  
-
   }
   else {
   playBtn.classList.remove('pause')
@@ -68,12 +66,6 @@ function playAudio() {
   tracks[playNum].pause();
   }
 }
-
-// function updateProgress(e){
-// const {duration, currentTime} = e.target ;
-// const progressPercent = (currentTime / duration) * 100;
-// progress.style.width = `${progressPercent}%`
-// }
 
 function updateProgress(){
   const duration = tracks[playNum].duration;
